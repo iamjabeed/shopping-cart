@@ -7,12 +7,14 @@ import Body from "./src/components/Body";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Cart from "./src/components/Cart";
 import Error from "./src/components/Error";
+import { Provider } from "react-redux";
+import store from "./src/utils/store";
 const AppLayout = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
-     <Outlet/>
-    </>
+      <Outlet />
+    </Provider>
   );
 };
 
