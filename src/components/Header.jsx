@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import store from "../utils/store";
 
 const Header = () => {
-  const cartItems = useSelector((store) => store.cart);
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <div className="flex justify-between items-center pr-10 pl-10 bg-gray-100">
       <img
@@ -19,7 +19,7 @@ const Header = () => {
         </li>
 
         <li className="flex justify-between items-center">
-          {cartItems.items.length}
+          {cartItems.length}
           <Link to={"/cart"}>
             <img
               src="https://img.icons8.com/ios/2x/shopping-cart.png"

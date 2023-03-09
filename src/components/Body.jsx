@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import{addItem} from "../utils/cartSlice"
+import { addItem } from "../utils/cartSlice";
 
 const Body = () => {
   const [products, setProducts] = useState([]);
@@ -10,15 +10,15 @@ const Body = () => {
     const data = await fetch("https://fakestoreapi.com/products");
     const json = await data.json();
     setProducts(json);
-    console.log(json);
+    // console.log(json);
   }
   useEffect(() => {
     fetchProducts();
   }, []);
-  const dispatch=useDispatch()
- const handleAdd=(product)=>{
-  dispatch(addItem(product))
- }
+  const dispatch = useDispatch();
+  const handleAdd = (product) => {
+    dispatch(addItem(product));
+  };
   return (
     <div className="flex flex-wrap justify-between items-center p-10  bg-gray-100">
       {/* <h1>Happy shopping</h1> */}
